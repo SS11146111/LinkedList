@@ -15,6 +15,17 @@ head.next=firstNode;
 firstNode.next=secondNode;
 secondNode.next=thirdNode;
 
+function printList()
+{
+    let p = head;
+    while(p!=null)
+    {
+        console.log(p.data)
+        p=p.next;
+    }
+    
+}
+
 //Deletion from beginning of LL
 /*function deleteBeginning()
 {
@@ -64,7 +75,7 @@ console.log("-------------------------")*/
 
 
 //Deletion at the end
-function deleteEnd()
+/*function deleteEnd()
 {
     if(head == null)
     {
@@ -89,16 +100,7 @@ function deleteEnd()
 }
 
 
-function printList()
-{
-    let p = head;
-    while(p!=null)
-    {
-        console.log(p.data)
-        p=p.next;
-    }
-    
-}
+
 deleteEnd()
 printList()
 console.log("-------------------------")
@@ -117,8 +119,29 @@ console.log("-------------------------")
 
 deleteEnd()
 printList()
-console.log("-------------------------")
+console.log("-------------------------")*/
 
 //TC:Avg/Worst case - O(n)
 //TC:Best Case - one node in LL/ LL empty - O(1)
 //SC:O(1)
+
+//Deletion at an index
+function deleteAtIndex(index)
+{
+    let d = head;
+    index=index-1;
+    while(index>0)
+    {
+        d=d.next;
+        index--;
+    }
+
+    d1=d.next;
+    d.next=d1.next;
+    d1.next=null
+}
+
+deleteAtIndex(3)
+
+printList()
+
